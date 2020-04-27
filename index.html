@@ -62,10 +62,9 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
                   </div>
                 </li>
                 <li> Tools! </li>
-                <li> Backfill </li>
+                <li> Backfill Scheduling</li>
               </ul>
             </li>
-            <li> References </li>
           </ul>
         </section>
 
@@ -83,8 +82,10 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
           <ul>
             <li> Slurm Default: FIFO </li>
             <li> With the Multifactor Priority Plugin: ordered by priority </li>
-            <li> But if your job can be executed without delaying the start of 
-                 any other jobs with higher priority, backfill kicks in </li>
+            <li> But if a job can be scheduled without delaying the start of 
+                 any other jobs with higher priority, the backfill scheduler may 
+                 launch it first
+            </li>
           </ul>
         </section>
 
@@ -134,7 +135,7 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
 
           <p class="fragment" data-fragment-index="3"> (currently, 
           <b>PriorityMaxAge</b> = 7 days on Sunbird, and 
-          <b> PriorityWeightAge </b> = 1000 </p>
+          <b> PriorityWeightAge </b> = 1000) </p>
 
           <p class="fragment" data-fragment-index="4"> The time spent in the 
           queue while the job cannot run because of dependencies or because it 
