@@ -92,15 +92,14 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
         <section>
           <h4> The Multifactor Priority Plugin </h4>
            <code style="font-size: 40%"> 
-              Job_priority = site_factor + </br>
-              (PriorityWeightAge) * (age_factor) + </br>
-              (PriorityWeightAssoc) * (assoc_factor) + </br>
-              (PriorityWeightFairshare) * (fair-share_factor) + </br>
-              (PriorityWeightJobSize) * (job_size_factor) + </br>
-              (PriorityWeightPartition) * (partition_factor) + </br>
-              (PriorityWeightQOS) * (QOS_factor) + </br>
+              Job_priority = (PriorityWeightAge * age_factor) + </br>
+              (PriorityWeightQOS * QOS_factor) + </br>
+              (PriorityWeightPartition * partition_factor) + </br>
+              (PriorityWeightJobSize * job_size_factor) + </br>
+              (PriorityWeightFairshare * fair-share_factor) + </br>
+              (PriorityWeightAssoc * assoc_factor) + </br>
               SUM(TRES_weight_&lttype&gt * TRES_factor_&lttype&gt, ...) </br>
-              - nice_factor </br>
+              - nice_factor + site_factor</br>
             </code>
           <ul>
             <li> All the factors are numbers between 0 and 1 </li>
