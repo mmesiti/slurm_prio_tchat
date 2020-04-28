@@ -91,9 +91,7 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
 
         <section>
           <h4> The Multifactor Priority Plugin </h4>
-
-          <div style="text-align: left">
-            <code style="font-size: 60%"> 
+           <code style="font-size: 40%"> 
               Job_priority = site_factor + </br>
               (PriorityWeightAge) * (age_factor) + </br>
               (PriorityWeightAssoc) * (assoc_factor) + </br>
@@ -101,19 +99,18 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
               (PriorityWeightJobSize) * (job_size_factor) + </br>
               (PriorityWeightPartition) * (partition_factor) + </br>
               (PriorityWeightQOS) * (QOS_factor) + </br>
-              SUM(TRES_weight_cpu * TRES_factor_cpu, </br>
-              TRES_weight_&lttype&gt * TRES_factor_&lttype&gt, ...) </br>
+              SUM(TRES_weight_&lttype&gt * TRES_factor_&lttype&gt, ...) </br>
               - nice_factor </br>
             </code>
-          </div>
+          <ul class="fragment" data-fragment-index="1">
+            <li> All the factors are numbers between 0 and 1 </li>
+            <li> All the weights are positive integers (should be large)</li>
+          </ul>
         </section>
 
         <section>
           <h4> The Multifactor Priority Plugin </h4>
-          <ul>
-            <li> All the factors are numbers between 0 and 1 </li>
-            <li> All the weights are positive integers (>1000) </li>
-          </ul> </br> </br>
+ </br> </br>
 
           <p class="fragment" data-fragment-index="1"> 
           We can see the values of the weights in </br>
