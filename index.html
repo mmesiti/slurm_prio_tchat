@@ -102,7 +102,7 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
               SUM(TRES_weight_&lttype&gt * TRES_factor_&lttype&gt, ...) </br>
               - nice_factor </br>
             </code>
-          <ul class="fragment" data-fragment-index="1">
+          <ul>
             <li> All the factors are numbers between 0 and 1 </li>
             <li> All the weights are positive integers (should be large)</li>
           </ul>
@@ -112,10 +112,10 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
           <h4> The Multifactor Priority Plugin </h4>
  </br> </br>
 
-          <p class="fragment" data-fragment-index="1"> 
+          <p> 
           We can see the values of the weights in </br>
           <code> etc/slurm/slurm.conf </code></br> </p> 
-          <p class="fragment" data-fragment-index="2"> 
+          <p> 
           or with </br>
           <code> sprio -w </code></br>
           </p>
@@ -123,18 +123,18 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
 
         <section>
           <h4> AGE FACTOR</h4>
-          <p class="fragment" data-fragment-index="1"> This is the factor that 
+          <p> This is the factor that 
           will make your job more likely to start 
           the more time it spends in the queue </p>
 
-          <p class="fragment" data-fragment-index="2"> It will increase 
+          <p> It will increase 
           linearly over time, reaching 1.0 at <b>PriorityMaxAge</b> </p>
 
-          <p class="fragment" data-fragment-index="3"> (currently, 
+          <p> (currently, 
           <b>PriorityMaxAge</b> = 7 days on Sunbird, and 
           <b> PriorityWeightAge </b> = 1000) </p>
 
-          <p class="fragment" data-fragment-index="4"> The time spent in the 
+          <p> The time spent in the 
           queue while the job cannot run because of dependencies or because it 
           is withheld <b> does not count</b>.</p>
 
@@ -145,11 +145,11 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
 
           Each QOS has a priority factor associated with it.
 
-          <p class="fragment" data-fragment-index="1"> These can be visualised
+          <p> These can be visualised
           with </br>
           <code> sacctmgr show qos </code></p>
 
-          <p class="fragment" data-fragment-index="2"> The priorities shown
+          <p> The priorities shown
           are normalised to the highest </p>
 
         </section>
@@ -158,11 +158,11 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
           <h4> PARTITION FACTOR</h4>
           Each partition has a priority factor associated with it.
 
-          <p class="fragment" data-fragment-index="1"> These can be visualised
+          <p> These can be visualised
           with </br>
           <code> scontrol show partitions </code></p>
 
-          <p class="fragment" data-fragment-index="2"> Notice that every 
+          <p> Notice that every 
           partition has an associated QOS that will carry its own priority
           factor.
           </p>
@@ -174,7 +174,7 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
           Larger jobs get a priority increase proportional to its size (number
           of nodes requested).
 
-          <p class="fragment" data-fragment-index="1"> The factor is equal to
+          <p> The factor is equal to
           1.0 for a job that requests all the nodes on the machine. </p>
 
         </section>
@@ -182,14 +182,14 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
         <section>
           <h4> FAIR SHARE FACTOR</h4>
           This is the complex one. </br>
-          <p class="fragment" data-fragment-index="1"> 
+          <p> 
           Goal: prioritize jobs from recently under-serviced accounts, and 
           de-prioritize jobs from recently over-serviced accounts.
           </p>
 
-          <p class="fragment" data-fragment-index="2"> 
+          <p> 
           Two algorithms:</br>
-          <ul class="fragment" data-fragment-index="2"> 
+          <ul> 
             <li> <a href="https://slurm.schedmd.com/fair_tree.html">
                 "Fair Tree"</a>, current </li>
             <li> <a href="https://slurm.schedmd.com/classic_fair_share.html">
@@ -203,16 +203,16 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
           
           What is an association?
 
-					<p class="fragment" data-fragment-index="1" style="font-size: smaller"> 
+					<p style="font-size: smaller"> 
 					From <a href="https://slurm.schedmd.com/resource_limits.html">
 						the documentation</a>:
-					<blockquote class="fragment" data-fragment-index="1">
+					<blockquote>
 						The association is a combination of cluster, account, user names 
 						and optional partition name.
 					</blockquote>
 					</p>
 
-					<p class="fragment" data-fragment-index="2" style="font-size: smaller"> 
+					<p style="font-size: smaller"> 
 					We can look at all of them with the command </br>
 					<code>sshare</code>, or </br>
 					<code>sacctmgr show associations</code>
